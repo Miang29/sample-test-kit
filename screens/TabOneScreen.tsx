@@ -1,65 +1,71 @@
-import { Dimensions, Image, StyleSheet } from 'react-native';
+import React from "react";
+import {StyleSheet,View,Text, TextInput,TouchableOpacity} from  "react-native";
 
-import EditScreenInfo from '../components/EditScreenInfo';
-import { Text, View } from '../components/Themed';
-import { RootTabScreenProps } from '../types';
-
-export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
+export default function TabOneScreen() {
   return (
-    <View style={{
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center'
-    }}>
-      <View style={{
-        height: '75%',
-        width: '80%',
-        backgroundColor: '#E7EEF1',
-        borderRadius: 10,
-        overflow: 'hidden',
-        padding: 10,
-        shadowColor: '#000',
-        shadowOffset: {
-          width: 0,
-          height: 2,
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
-        elevation: 5,
-        flexDirection: 'column'
-      }}>
+    <View style={styles.container}>
+      <Text style={styles.Login}> Login to my App</Text>
+      <TextInput style={styles.inputText}
+        placeholder= "Username"
+        />
+        <TextInput style={styles.inputText}
+        placeholder= "Password"
+        secureTextEntry
+        />
+        <View style={styles.btnContainer}>
+          <TouchableOpacity 
+          style={styles.btnLogin}
+          >
+            <Text style={styles.btnText}>Login</Text>
+          </TouchableOpacity>
 
-        <View style={{ flex: 2, borderRadius: 10, overflow: 'hidden' }}>
-          <Image
-            source={{ uri: 'https://manofmany.com/wp-content/uploads/2021/09/What-is-an-NFT-1.jpg' }}
-            style={{
-              height: '100%',
-              width: '100%',
-              resizeMode: 'cover',
-            }}
-          />
+          <TouchableOpacity
+          style={styles.btnSignUp}
+          >
+            <Text style={styles.btnText}>Sign Up</Text>
+          </TouchableOpacity>
         </View>
-
-        <View style={{ flex: 0, borderRadius: 10, marginVertical: 10, padding: 10 }}>
-          <Text style={{
-            fontSize: 25,
-            color: '#525454',
-            fontFamily: 'poppins-semi-bold'
-          }}>Title Here</Text>
-        </View>
-
-        <View style={{ flex: 0, padding: 10, borderRadius: 10 }}>
-          <Text style={{
-            fontSize: 18,
-            color: '#999B9B',
-            fontFamily: 'poppins-regular',
-          }}>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-            been the industry's standard dummy text ever since the 1500s,
-          </Text>
-        </View>
-
-      </View>
     </View>
-  );
+  )
 }
+    const styles = StyleSheet.create({
+container: {
+  flex: 1,
+  backgroundColor: '#402F2C',
+  justifyContent: 'center',
+  alignItems: 'center'
+},
+Login: {
+ fontSize: 30,
+  textAlign: 'center',
+  margin: 18,
+  fontFamily: 'poppins-bold',
+  color: 'white'
+},
+inputText:{
+  width: "90%",
+  backgroundColor:'white',
+  padding: 15,
+  marginBottom:10
+},
+btnContainer: {
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+  width: '90%'
+},
+btnLogin: {
+  backgroundColor: '#C4A29C',
+  padding: 15,
+  width: '45%',
+},
+btnSignUp: {
+  backgroundColor: '#C4A29C',
+  padding: 15,
+  width: '45%',
+},
+btnText: {
+  fontSize: 16,
+  textAlign: 'center'
+}
+});
+  
