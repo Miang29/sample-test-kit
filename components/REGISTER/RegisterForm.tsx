@@ -205,7 +205,7 @@ import ViewWithLoading from "../REGISTER/ViewWithLoading";
                           title="Sign Up"
                           buttonStyle={{
                             backgroundColor: '#2E9CBB',
-                            paddingTop: 3,
+                            paddingTop: 5,
                           }}
                           containerStyle={{
                             marginVertical: 10,
@@ -249,9 +249,9 @@ const styles = StyleSheet.create({
   input: {
     height:32,
     width: '90%',
-    margin: 4,
+    margin: 3,
     borderWidth: 1,
-    padding: 3,
+    padding: 2,
     backgroundColor: '#2E9CBB',
     borderRadius: 10,
    color: '#062C30'
