@@ -1,13 +1,14 @@
 import React from "react";
 import { View, StyleSheet,  } from "react-native";
 import RegisterForm from "../components/REGISTER/RegisterForm";
-
+import Header from "../components/REGISTER/Header";
 
 export default function TabOneScreen() {
   
   return (
     <View style={styles.container}>
-        <RegisterForm/>
+        <Header/>
+         <RegisterForm/>
       </View>
    
   );
@@ -15,9 +16,10 @@ export default function TabOneScreen() {
 const styles = StyleSheet.create({
   container:{
     flex: 1,
-    backgroundColor: '#402F2C',
+    backgroundColor: '#3BC4EC',
     justifyContent: 'center',
-    paddingLeft: 60,
-    paddingRight: 60
+    paddingLeft: 20,
+    paddingRight: 20
   }
 })
+
